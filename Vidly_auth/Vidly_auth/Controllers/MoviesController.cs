@@ -1,46 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
+using Vidly_auth.Models;
 
 namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
-        // GET: Movies/Random
-        public ActionResult Random()
+        private ApplicationDbContext _context;
+
+        public MoviesController()
         {
-            var movies = new List<Movie>
-            {
-                new Movie { Id = 1, Name = "Back to the Future, Part 1"},
-                new Movie { Id = 2, Name = "Star Trek: First Contact"}
-            };
+            _context = new ApplicationDbContext();
+        }
 
-            var customers = new List<Customer>
-            {
-                new Customer { Id = 1, Name = "Steve"},
-                new Customer { Id = 2, Name = "Swee"}
-            };
-
-            var viewModel = new RandomMovieViewModel
-            {
-                Movie = movies[0]
-                //Customers = customers
-            };
-
-            return View(viewModel);
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
         }
 
         public ActionResult Index()
         {
-            var movies = new List<Movie>
-            {
-                new Movie { Id = 1, Name = "Back to the Future, Part 1"},
-                new Movie { Id = 2, Name = "Star Trek: First Contact"}
-            };
+            var movies = _context.Movies.Include(c => c.Genre).ToList();
+            
 
             var viewModel = new MoviesViewModel
             {
@@ -51,9 +38,11 @@ namespace Vidly.Controllers
         }
 
         [Route("Movies/Details/{Id}")]
-        public ActionResult ById(int id)
+        public ActionResult Details(int id)
         {
-            return Content("Id=" + id);
+            var movie = _context.Movies.Include(c => c.Genre).SingleOrDefault(c => c.Id.Equals(id));
+
+            return View(movie);
         }
     }
 }

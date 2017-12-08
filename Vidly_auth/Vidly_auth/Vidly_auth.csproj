@@ -217,9 +217,38 @@
     <Compile Include="Migrations\201712081329085_ApplyAnnotationsToCustomerName.Designer.cs">
       <DependentUpon>201712081329085_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712081832169_AddNameToMembershipType.cs" />
+    <Compile Include="Migrations\201712081832169_AddNameToMembershipType.Designer.cs">
+      <DependentUpon>201712081832169_AddNameToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712081837074_PopulateMembershipTypeNames.cs" />
+    <Compile Include="Migrations\201712081837074_PopulateMembershipTypeNames.Designer.cs">
+      <DependentUpon>201712081837074_PopulateMembershipTypeNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712081904063_AddBirthdateToCustomerModel.cs" />
+    <Compile Include="Migrations\201712081904063_AddBirthdateToCustomerModel.Designer.cs">
+      <DependentUpon>201712081904063_AddBirthdateToCustomerModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712082009559_AddStockAndDatesToMovieModel.cs" />
+    <Compile Include="Migrations\201712082009559_AddStockAndDatesToMovieModel.Designer.cs">
+      <DependentUpon>201712082009559_AddStockAndDatesToMovieModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712082012594_AddGenreToMovieModel.cs" />
+    <Compile Include="Migrations\201712082012594_AddGenreToMovieModel.Designer.cs">
+      <DependentUpon>201712082012594_AddGenreToMovieModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712082037144_ChangedGenreTypeInMovieModel.cs" />
+    <Compile Include="Migrations\201712082037144_ChangedGenreTypeInMovieModel.Designer.cs">
+      <DependentUpon>201712082037144_ChangedGenreTypeInMovieModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712082038484_PopulateGenres.cs" />
+    <Compile Include="Migrations\201712082038484_PopulateGenres.Designer.cs">
+      <DependentUpon>201712082038484_PopulateGenres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -229,6 +258,7 @@
     <Compile Include="ViewModels\CustomersViewModel.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="ViewModels\MoviesViewModel.cs" />
+    <Compile Include="ViewModels\MovieViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -292,6 +322,7 @@
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Movies\Random.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -324,6 +355,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712081329085_ApplyAnnotationsToCustomerName.resx">
       <DependentUpon>201712081329085_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712081832169_AddNameToMembershipType.resx">
+      <DependentUpon>201712081832169_AddNameToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712081837074_PopulateMembershipTypeNames.resx">
+      <DependentUpon>201712081837074_PopulateMembershipTypeNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712081904063_AddBirthdateToCustomerModel.resx">
+      <DependentUpon>201712081904063_AddBirthdateToCustomerModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712082009559_AddStockAndDatesToMovieModel.resx">
+      <DependentUpon>201712082009559_AddStockAndDatesToMovieModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712082012594_AddGenreToMovieModel.resx">
+      <DependentUpon>201712082012594_AddGenreToMovieModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712082037144_ChangedGenreTypeInMovieModel.resx">
+      <DependentUpon>201712082037144_ChangedGenreTypeInMovieModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712082038484_PopulateGenres.resx">
+      <DependentUpon>201712082038484_PopulateGenres.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
