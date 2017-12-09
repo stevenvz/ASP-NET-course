@@ -7,7 +7,7 @@ using Vidly_auth.Models;
 
 namespace Vidly_auth.ViewModels
 {
-    public class NewCustomerViewModel
+    public class CustomerFormViewModel
     {
         public IEnumerable<MembershipType> MembershipTypes { get; set; }
         public Customer Customer { get; set; }
