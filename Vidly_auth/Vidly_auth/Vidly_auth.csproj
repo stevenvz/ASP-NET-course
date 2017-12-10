@@ -245,6 +245,14 @@
     <Compile Include="Migrations\201712082038484_PopulateGenres.Designer.cs">
       <DependentUpon>201712082038484_PopulateGenres.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712092351357_MadeMovieDateAddedNullable.cs" />
+    <Compile Include="Migrations\201712092351357_MadeMovieDateAddedNullable.Designer.cs">
+      <DependentUpon>201712092351357_MadeMovieDateAddedNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712092354317_RemovedNullableFromMovieDateAdded.cs" />
+    <Compile Include="Migrations\201712092354317_RemovedNullableFromMovieDateAdded.Designer.cs">
+      <DependentUpon>201712092354317_RemovedNullableFromMovieDateAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -258,7 +266,7 @@
     <Compile Include="ViewModels\CustomersViewModel.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="ViewModels\MoviesViewModel.cs" />
-    <Compile Include="ViewModels\MovieViewModel.cs" />
+    <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
@@ -323,7 +331,7 @@
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Movies\Random.cshtml" />
-    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Movies\MovieForm.cshtml" />
     <Content Include="Views\Customers\CustomerForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -378,6 +386,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712082038484_PopulateGenres.resx">
       <DependentUpon>201712082038484_PopulateGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712092351357_MadeMovieDateAddedNullable.resx">
+      <DependentUpon>201712092351357_MadeMovieDateAddedNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712092354317_RemovedNullableFromMovieDateAdded.resx">
+      <DependentUpon>201712092354317_RemovedNullableFromMovieDateAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
