@@ -15,9 +15,12 @@ namespace Vidly.Models
         public string Name { get; set; }
 
         public Genre Genre { get; set; }
+
+        [Display(Name = "Genre")]
         public byte GenreId { get; set; }
 
         [Display(Name = "Number in Stock")]
+        [Between1And200]
         public int NumberInStock { get; set; }
 
         [Display(Name = "Release Date")]
@@ -25,5 +28,8 @@ namespace Vidly.Models
 
         [Display(Name = "Date Added")]
         public DateTime DateAdded { get; set; }
+
+        public static readonly byte MinInStock = 1;
+        public static readonly byte MaxInStock = 200;
     }
 }
