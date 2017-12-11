@@ -25,17 +25,9 @@ namespace Vidly.Controllers
             _context.Dispose();
         }
 
-        public ActionResult Index()
+        public ViewResult Index()
         {
-            var movies = _context.Movies.Include(c => c.Genre).ToList();
-            
-
-            var viewModel = new MoviesViewModel
-            {
-                Movies = movies
-            };
-
-            return View(viewModel);
+            return View();
         }
 
         //[Route("Movies/Details/{Id}")]

@@ -5,6 +5,7 @@ using System.Web;
 using AutoMapper;
 using Vidly.Models;
 using Vidly_auth.Dtos;
+using Vidly_auth.Models;
 
 namespace Vidly_auth.App_Start
 {
@@ -12,15 +13,20 @@ namespace Vidly_auth.App_Start
     {
         public MappingProfile()
         {
-            Mapper.CreateMap<Customer, CustomerDto>()
+            // Domain to Dto
+            Mapper.CreateMap<Customer, CustomerDto>();
+            Mapper.CreateMap<Movie, MovieDto>();
+            Mapper.CreateMap<MembershipType, MembershipTypeDto>();
+            Mapper.CreateMap<Genre, GenreDto>();
+
+            // Dto to Domain
+            Mapper.CreateMap<CustomerDto, Customer>()
                 .ForMember(c => c.Id, opt => opt.Ignore());
-
-            Mapper.CreateMap<CustomerDto, Customer>();
-
+            
             Mapper.CreateMap<MovieDto, Movie>()
                 .ForMember(m => m.Id, opt => opt.Ignore());
 
-            Mapper.CreateMap<Movie, MovieDto>();
+            
         }
     }
 }
