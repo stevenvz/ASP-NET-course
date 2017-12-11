@@ -69,6 +69,10 @@ namespace Vidly_auth.Models
         public string DriversLicense { get; set; }
 
         [Required]
+        [Display(Name = "Phone Number")]
+        public string PhoneNumber { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
