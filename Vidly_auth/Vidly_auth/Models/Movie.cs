@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -28,6 +29,8 @@ namespace Vidly.Models
 
         [Display(Name = "Date Added")]
         public DateTime DateAdded { get; set; }
+
+        public ICollection<Rental> Rentals { get; set; }
 
         public static readonly byte MinInStock = 1;
         public static readonly byte MaxInStock = 200;
