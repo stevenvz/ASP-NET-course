@@ -24,6 +24,9 @@ namespace Vidly.Models
         [Between1And200]
         public int NumberInStock { get; set; }
 
+        [Display(Name = "Number Available")]
+        public int NumberAvailable { get; set; }
+
         [Display(Name = "Release Date")]
         public DateTime ReleaseDate { get; set; }
 

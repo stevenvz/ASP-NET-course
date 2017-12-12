@@ -22,6 +22,8 @@ namespace Vidly_auth.Dtos
         //[Between1And200]
         public int NumberInStock { get; set; }
 
+        public int NumberAvailable { get; set; }
+
         public DateTime ReleaseDate { get; set; }
 
         public DateTime DateAdded { get; set; }

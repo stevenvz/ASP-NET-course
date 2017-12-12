@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using AutoMapper;
+using Vidly.Models;
 using Vidly_auth.Dtos;
 using Vidly_auth.Models;
 
@@ -23,6 +25,8 @@ namespace Vidly_auth.Controllers.Api
         public IHttpActionResult GetRentals()
         {
             var rentalDtos = _context.Rentals
+                .Include(r => r.Customer)
+                .Include(r => r.Movie)
                 .ToList()
                 .Select(Mapper.Map<Rental, RentalDto>);
 
@@ -33,10 +37,12 @@ namespace Vidly_auth.Controllers.Api
         [HttpPost]
         public IHttpActionResult CreateRental(RentalDto rentalDto)
         {
-            if (!ModelState.IsValid)
-                return BadRequest();
+            var customer = _context.Customers.Single(c => c.Id == rentalDto.CustomerId);
+            var movie = _context.Movies.Single(m => m.Id == rentalDto.MovieId);
 
             var rental = Mapper.Map<RentalDto, Rental>(rentalDto);
+            rental.Customer = customer;
+            rental.Movie = movie;
 
             _context.Rentals.Add(rental);
             _context.SaveChanges();
