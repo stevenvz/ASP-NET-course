@@ -15,7 +15,7 @@ namespace Vidly_auth.Models
 
             return (movie.NumberInStock >= Movie.MinInStock && movie.NumberInStock <= Movie.MaxInStock)
                 ? ValidationResult.Success
-                : new ValidationResult("Number in Stock must be between 1 - 200.");
+                : new ValidationResult("Number in Stock must be between 0 - 200.");
         }
     }
 }

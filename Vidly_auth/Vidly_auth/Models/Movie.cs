@@ -35,7 +35,7 @@ namespace Vidly.Models
 
         public ICollection<Rental> Rentals { get; set; }
 
-        public static readonly byte MinInStock = 1;
+        public static readonly byte MinInStock = 0;
         public static readonly byte MaxInStock = 200;
     }
 }
