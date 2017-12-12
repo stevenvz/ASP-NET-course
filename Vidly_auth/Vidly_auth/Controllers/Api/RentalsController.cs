@@ -37,8 +37,18 @@ namespace Vidly_auth.Controllers.Api
         [HttpPost]
         public IHttpActionResult CreateRental(RentalDto rentalDto)
         {
-            var customer = _context.Customers.Single(c => c.Id == rentalDto.CustomerId);
             var movie = _context.Movies.Single(m => m.Id == rentalDto.MovieId);
+            if (movie == null)
+                return BadRequest("Invalid MovieId.");
+
+            if (movie.NumberAvailable < 1)
+                return BadRequest("Movie is not currently available.");
+
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == rentalDto.CustomerId);
+            if (customer == null)
+                return BadRequest("Invalid CustomerId.");
+
+            movie.NumberAvailable--;
 
             var rental = Mapper.Map<RentalDto, Rental>(rentalDto);
             rental.Customer = customer;
